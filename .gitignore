@@ -1,0 +1,6 @@
+# Build artifacts
+app/sensor_demo
+app/*.o
+
+__pycache__/
+*.pyc
