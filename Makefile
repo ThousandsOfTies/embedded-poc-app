@@ -1,15 +1,11 @@
 # AgentCockpit embedded PoC app
 
-CC_CROSS  = aarch64-linux-gnu-gcc
-CC_NATIVE = gcc
+CC = aarch64-linux-gnu-gcc
 
-.PHONY: cross native clean
+.PHONY: all clean
 
-cross:
-	$(MAKE) -C app CC=$(CC_CROSS)
-
-native:
-	$(MAKE) -C app CC=$(CC_NATIVE)
+all:
+	$(MAKE) -C app CC=$(CC)
 
 clean:
 	$(MAKE) -C app clean

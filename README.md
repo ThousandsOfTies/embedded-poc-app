@@ -11,14 +11,8 @@ AgentCockpit の組み込み PoC 用サンプルアプリです。
 ## Build
 
 ```bash
-make cross
-make native
+make
+make clean
 ```
 
-`agp-tools` と並べて clone している場合、EC2 へのツール・アプリ転送とシミュレーション起動は `agp-tools` 側から実行します。
-
-```bash
-cd ../agp-tools
-make deploy-ec2 EC2=vibecode-graviton APP_BINARY=../embedded-poc-app/app/sensor_demo
-make sim-start EC2=vibecode-graviton
-```
+Codespace build VM では ARM64 向けにビルドします。EC2 への転送と simulation runtime 操作は WSL hub 側の AgentCockpit から行います。
