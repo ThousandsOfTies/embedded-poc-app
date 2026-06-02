@@ -1,5 +1,7 @@
 # ハードウェア配線
 
+> このドキュメントは `embedded-poc-app` リポジトリ単体での作業用抹です。最新・正本は上流の **AgentCockpit リポジトリ `docs/04_HARDWARE_WIRING.md`** を参照してください。
+
 実機（Raspberry Pi 5）でデモを動かすための配線。
 
 ---
