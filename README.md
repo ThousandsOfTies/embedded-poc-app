@@ -1,6 +1,6 @@
 # embedded-poc-app
 
-AgentCockpit の組み込み PoC 用サンプルアプリです。
+Gapless Agent Runtime の組み込み PoC 用サンプルアプリです。
 
 主な内容:
 
@@ -15,4 +15,4 @@ make
 make clean
 ```
 
-Codespace build VM では ARM64 向けにビルドします。EC2 への転送と simulation runtime 操作は WSL hub 側の AgentCockpit から行います。
+Codespace build VM では ARM64 向けにビルドします。EC2 への転送と simulation runtime 操作は WSL hub 側の Gapless Agent Runtime から行います。

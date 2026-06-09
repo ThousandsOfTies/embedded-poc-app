@@ -1,4 +1,4 @@
-# AgentCockpit embedded PoC app
+﻿# Gapless Agent Runtime embedded PoC app
 
 CC = aarch64-linux-gnu-gcc
 
