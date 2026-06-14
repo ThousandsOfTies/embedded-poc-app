@@ -2,5 +2,11 @@
 app/sensor_demo
 app/*.o
 
+# MCU (Renode/Pico) build outputs
+mcu-renode/firmware/build/
+*.elf
+*.uf2
+*.bin
+
 __pycache__/
 *.pyc

@@ -1,0 +1,29 @@
+:name: Pico blink_button
+:description: ボタン -> LED の最小ファームを Renode(sim) で動かす
+
+using sysbus
+
+# Renode 同梱の RP2040 プラットフォーム定義を使う。
+# 注意: 同梱定義の正確なパス/名前は手元の Renode のバージョンで異なりうる。
+#       未解決なら Renode モニタで `help` / 配布物の platforms/ を確認して調整する。
+mach create "pico"
+machine LoadPlatformDescription @platforms/cpus/rp2040.repl
+
+# ビルドした ELF をロード（このスクリプトからの相対パス。環境に合わせて調整）
+sysbus LoadELF @firmware/build/blink_button.elf
+
+# printf を見るため UART アナライザを開く（uart0 名は repl 定義に依存）
+showAnalyzer sysbus.uart0
+
+# 仮想ボタン操作マクロ（GPIO14。プルアップ前提なので 押下=false=L）
+# 注意: GPIO ペリフェラルの登録名(gpio)と WritePin の API は repl/版に依存。
+#       動かない場合は `peripherals` で名前を確認して合わせる。
+macro press   "gpio WritePin 14 false"
+macro release "gpio WritePin 14 true"
+
+start
+
+# 使い方:
+#   (pico) runMacro $press     ← ボタン押下
+#   (pico) runMacro $release   ← 離す
+#   UART に [btn] DOWN -> LED ON が出れば成功
